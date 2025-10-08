@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YehorBahrii.TaskPlanner.Domain.Logic", "YehorBahrii.TaskPlanner.Domain.Logic.csproj", "{B144E07C-7C07-425C-A4B1-A5FD3F73F004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YehorBahrii.TaskPlanner.Domain.Models", "..\YehorBahrii.TaskPlanner.Domain.Models\YehorBahrii.TaskPlanner.Domain.Models.csproj", "{21D48003-6D65-985F-7C94-5DB802D7F78E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B144E07C-7C07-425C-A4B1-A5FD3F73F004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B144E07C-7C07-425C-A4B1-A5FD3F73F004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B144E07C-7C07-425C-A4B1-A5FD3F73F004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B144E07C-7C07-425C-A4B1-A5FD3F73F004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D48003-6D65-985F-7C94-5DB802D7F78E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D48003-6D65-985F-7C94-5DB802D7F78E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D48003-6D65-985F-7C94-5DB802D7F78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D48003-6D65-985F-7C94-5DB802D7F78E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {783A90C4-ACA5-4CE3-919D-55D218DB48A2}
+	EndGlobalSection
+EndGlobal
