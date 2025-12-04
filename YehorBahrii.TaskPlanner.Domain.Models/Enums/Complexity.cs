@@ -5,7 +5,7 @@
         None,
         Low,
         Medium,
-        High,
-        Urgent
+        Hard,
+        Impossible
     }
 }
