@@ -43,7 +43,7 @@ internal static class Program
                     Console.ReadLine();
                     return;
                 default:
-                    Console.WriteLine("Невiдома команда. Спробуйте ще раз.");
+                    Console.WriteLine("Невiдома команда. Спробуйте щe раз.");
                     break;
             }
         }
