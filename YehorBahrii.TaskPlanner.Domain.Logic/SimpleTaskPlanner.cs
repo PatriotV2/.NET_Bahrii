@@ -1,37 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using YehorBahrii.TaskPlanner.Domain.Models; // Бачити WorkItem
-using YehorBahrii.TaskPlanner.Domain.Models.Enums; // Бачити Priority та Complexity
+using YehorBahrii.TaskPlanner.Domain.Models;
+using YehorBahrii.TaskPlanner.DataAccess.Abstractions;
+
 namespace YehorBahrii.TaskPlanner.Domain.Logic
 {
     public class SimpleTaskPlanner
     {
-        public WorkItem[] CreatePlan(WorkItem[] items)
+        private readonly IWorkItemsRepository _repository;
+
+        public SimpleTaskPlanner(IWorkItemsRepository repository)
         {
-            // Перетворюємо масив у список
-            var itemsAsList = items.ToList();
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+        }
 
-            // Сортуємо
-            itemsAsList.Sort(CompareWorkItems);
+        public WorkItem[] CreatePlan()
+        {
+            // Беремо всі завдання з репозиторію
+            var items = _repository.GetAll();
 
-            // Повертаємо назад як масив
-            return itemsAsList.ToArray();
+            // Ігноруємо виконані завдання
+            var pendingItems = items.Where(item => !item.IsCompleted).ToList();
+
+            // Сортуємо за пріоритетом, датою та назвою
+            pendingItems.Sort(CompareWorkItems);
+
+            return pendingItems.ToArray();
         }
 
         private static int CompareWorkItems(WorkItem firstItem, WorkItem secondItem)
         {
-            // 1️ Порівнюємо Priority (за спаданням: спершу важливіше)
+            // 1. Priority (спаданням)
             int priorityCompare = secondItem.Priority.CompareTo(firstItem.Priority);
-            if (priorityCompare != 0)
-                return priorityCompare;
+            if (priorityCompare != 0) return priorityCompare;
 
-            // 2️ Якщо Priority однаковий, порівнюємо DueDate (за зростанням)
+            // 2. DueDate (за зростанням)
             int dateCompare = firstItem.DueDate.CompareTo(secondItem.DueDate);
-            if (dateCompare != 0)
-                return dateCompare;
+            if (dateCompare != 0) return dateCompare;
 
-            // 3️ Якщо і дата однакова — порівнюємо Title (алфавітно)
+            // 3. Title (алфавітно)
             return string.Compare(firstItem.Title, secondItem.Title, StringComparison.OrdinalIgnoreCase);
         }
     }

@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\YehorBahrii.TaskPlanner.DataAccess.Abstractions\YehorBahrii.TaskPlanner.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\..\YehorBahrii.TaskPlanner.DataAccess\YehorBahrii.TaskPlanner.DataAccess.csproj" />
     <ProjectReference Include="..\..\YehorBahrii.TaskPlanner.Domain.Logic\YehorBahrii.TaskPlanner.Domain.Logic.csproj" />
     <ProjectReference Include="..\..\YehorBahrii.TaskPlanner.Domain.Models\YehorBahrii.TaskPlanner.Domain.Models.csproj" />
   </ItemGroup>
